@@ -1,0 +1,47 @@
+﻿@page "/"
+@using Stripe.Checkout
+@inject NavigationManager NavMan
+
+<PageTitle>Widget Sale!</PageTitle>
+
+<section class="border p-4 bg-light">
+    <h2>£49</h2>
+    <p>While stocks last!</p>
+
+    <form method="post" @formname="checkout" @onsubmit="Checkout">
+        <button type="submit" class="btn btn-primary">
+            Place Order
+        </button>
+        <AntiforgeryToken />
+    </form>
+
+</section>
+
+@code {
+
+
+    private async Task Checkout()
+    {
+        // check this domain matches the one where the web app is running
+        var domain = "http://localhost:5124";
+        var options = new SessionCreateOptions
+        {
+            LineItems = new List<SessionLineItemOptions>
+            {
+                new()
+                {
+                    // Provide the exact Price ID (for example, price_1234) of the product you want to sell
+                    Price = "price_1NzKW6DtMj39WTJF60soVlji",
+                    Quantity = 1,
+                },
+            },
+            Mode = "payment",
+            SuccessUrl = domain + "/OrderComplete",
+            CancelUrl = domain + "/OrderAbandoned"
+        };
+        var service = new SessionService();
+        var session = await service.CreateAsync(options);
+        NavMan.NavigateTo(session.Url);
+    }
+
+}

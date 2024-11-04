@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripeDemo", "StripeDemo\StripeDemo.csproj", "{5725A998-7673-4031-9686-56E79C33786B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5725A998-7673-4031-9686-56E79C33786B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5725A998-7673-4031-9686-56E79C33786B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5725A998-7673-4031-9686-56E79C33786B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5725A998-7673-4031-9686-56E79C33786B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
