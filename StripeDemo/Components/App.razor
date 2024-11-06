@@ -12,7 +12,16 @@
 
 <body>
 <Routes/>
-<script src="_framework/blazor.web.js"></script>
+<script src="_framework/blazor.web.js" autostart="true"></script>
+        
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        window.Blazor.addEventListener('enhancedload', (e) => {
+            console.log('Document updated during enhanced navigation');
+        })         
+    });
+</script>
+        
 </body>
 
 </html>
